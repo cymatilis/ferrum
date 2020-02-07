@@ -1,6 +1,6 @@
 ## Ferrum
 
-> ### Noun
+> ### Noun (Latin)
 > **ferrum** n  (_genitive_  **[ferrī](https://en.wiktionary.org/wiki/ferri#Latin "ferri")**);  _[second declension](https://en.wiktionary.org/wiki/Appendix:Latin_second_declension "Appendix:Latin second declension")_
 >
 >1.  [iron](https://en.wiktionary.org/wiki/iron "iron")
