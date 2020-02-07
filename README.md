@@ -18,6 +18,6 @@ To invoke a specific result:
 4. Error: Use security code 501.
 5. Declined: Any other security code and card number.
 
-Additionally the API will randomly fail (throw and exception) for approx 1 in 4 requests, and response time will vary from ~0.5 to ~4.5 seconds.
+Additionally the API will randomly fail (throw an exception) for approx 1 in 4 requests, and response time will vary from ~0.5 to ~4.5 seconds.
 
 *Built in C# .NET targeting .NET Core 3.1*
