@@ -16,6 +16,7 @@ Data is stored against a local SQL server database using Entity Framework and wi
 Project is (should be) configured to run in Kestral:
 * localhost:5001 - Gateway
 * localhost:5003 - FakeBank 
+
 Postman collection (with default user) included for demonstration.
 
 # Mocked Bank API (FakeBank)
