@@ -13,6 +13,9 @@ REST API for authorising card payments against a mocked bank integration.
 
 Data is stored against a local SQL server database using Entity Framework and will seed on run. Basic user authentication on requests. Default user is seeded into DB.
 
+Project is (should be) configured to run in Kestral:
+* localhost:5001 - Gateway
+* localhost:5003 - FakeBank 
 Postman collection (with default user) included for demonstration.
 
 # Mocked Bank API (FakeBank)
