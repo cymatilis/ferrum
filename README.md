@@ -7,7 +7,13 @@
 >2.  any  [tool](https://en.wiktionary.org/wiki/tool "tool")  made of iron
 
 # Payment Gateway API
-REST API for authorising card payments against a mocked bank integration.
+REST API for authorising card payments against a mocked bank integration. 
+1. Authorise a card payment
+2. Retrieve a previous transaction.
+
+Data is stored against a local SQL server database using Entity Framework and will seed on run. Basic user authentication on requests. Default user is seeded into DB.
+
+Postman collection (with default user) included for demonstration.
 
 # Mocked Bank API (FakeBank)
 To invoke a specific result:
