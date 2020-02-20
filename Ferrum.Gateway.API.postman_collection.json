@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "eaf34181-b9a8-4e8a-ba3b-a904e8789075",
+		"name": "Ferrum.Gateway.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FakeBank Authorise",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"CardNumber\" : \"4234 5678 9012 3456\",\n\t\"SecurityCode\" : 200,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 220.55,\n\t\"CurrencyCode\" : \"INR\",\n\t\"AccountHolder\": \"A N Other\"\n}\n\t"
+				},
+				"url": {
+					"raw": "https://localhost:5003/api/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5003",
+					"path": [
+						"api",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway 500 Internal Server Error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/hello/error",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"hello",
+						"error"
+					]
+				},
+				"description": "Simulate an Exception within the Gateway."
+			},
+			"response": []
+		},
+		{
+			"name": "Gatway 401 Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"WrongSecret\",\n\t\"CardNumber\" : \"4234 5678 9012 3456\",\n\t\"SecurityCode\" : 672,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 220.55,\n\t\"CurrencyCode\" : \"INR\",\n\t\"AccountHolder\": \"A N Other\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"Password123!\",\n\t\"TransactionId\": \"e3f74f2f-df67-459c-9daa-9231418d26a3\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/getTransaction",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"getTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorise (Authorised)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"Password123!\",\n\t\"CardNumber\" : \"5451564343386429\",\n\t\"SecurityCode\" : 200,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 56.00,\n\t\"CurrencyCode\" : \"GBP\",\n\t\"AccountHolder\": \"A N Other\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorise (Declined)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"Password123!\",\n\t\"CardNumber\" : \"3734 567890 12344\",\n\t\"SecurityCode\" : 6727,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 220.55,\n\t\"CurrencyCode\" : \"INR\",\n\t\"AccountHolder\": \"A N Other\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorise (Error)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"Password123!\",\n\t\"CardNumber\" : \"4234 5678 9012 3456\",\n\t\"SecurityCode\" : 501,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 2000.00,\n\t\"CurrencyCode\" : \"USD\",\n\t\"AccountHolder\": \"A N Other\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authorise (Error) Max. Retries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7ffc7f-3b4a-4ded-b16b-a2ad771a4262",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"UserId\" : \"a37b078f-31e5-437a-8006-3766930ff670\",\n\t\"UserSecret\" : \"Password123!\",\n\t\"CardNumber\" : \"4234 5678 9012 3456\",\n\t\"SecurityCode\" : 500,\n\t\"ExpiryDate\" : \"02/20\",\n\t\"Amount\" : 220.55,\n\t\"CurrencyCode\" : \"INR\",\n\t\"AccountHolder\": \"A N Other\"\n}"
+				},
+				"url": {
+					"raw": "https://localhost:5001/cardpayment/authorise",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"cardpayment",
+						"authorise"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>d944073f-ca8c-48b8-b7b0-de1c03c6fc8b</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AssemblyName>Ferrum.Gateway</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ferrum.Core\Ferrum.Core.csproj" />
+    <ProjectReference Include="..\Ferrum.Gateway.Data\Ferrum.Gateway.Data.csproj" />
+    <ProjectReference Include="..\Ferrum.Gateway.Integrations\Ferrum.Gateway.Integrations.csproj" />
+  </ItemGroup>
+
+
+</Project>
